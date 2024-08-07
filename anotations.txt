@@ -1,0 +1,10 @@
+Pacotes instalados:
+  react-hook-form:
+    Comando Instalação: npm install react-hook-form
+    Função: Facilitar a validação de formulários;
+
+  next-auth:
+    Comando Instalação: npm install next-auth
+      Para instalar a versão 5, utilize o comando: npm install next-auth@beta
+    Função: Uma solução open-Source para autenticação de usuários
+    Para instalar a versão 5
