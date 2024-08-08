@@ -6,7 +6,16 @@ Pacotes instalados:
   next-auth:
     Comando Instalação: npm install next-auth
       Para instalar a versão 5, utilize o comando: npm install next-auth@beta
+      mas atenção, a versão 5 só é compatível com NextJs 14 ou superior
     Função: Uma solução open-Source para autenticação de usuários
-    Para instalar a versão 5
+
 
   Prisma:
+    Comando Instalação:
+      npm install @prisma/client @auth/prisma-adapter
+      npm install prisma --save-dev
+    Função: Prisma é um mapeador objeto-relacional (ORM) de última geração que afirma ajudar os desenvolvedores a construir mais rápido e cometer menos erros
+    Inicialização:
+      1) npx prisma
+      2) npx prisma init
+
