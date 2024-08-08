@@ -8,3 +8,5 @@ Pacotes instalados:
       Para instalar a versão 5, utilize o comando: npm install next-auth@beta
     Função: Uma solução open-Source para autenticação de usuários
     Para instalar a versão 5
+
+  Prisma:
