@@ -1,12 +1,23 @@
 import NextAuth from "next-auth"
 import GitHub from "next-auth/providers/github"
+import Nodemailer from "next-auth/providers/nodemailer"
+import { PrismaAdapter } from "@auth/prisma-adapter"
+import { prisma } from "../database"
 
-export const {
-  handlers: {GET, POST},
-  auth
-} = NextAuth({
-  providers: [GitHub],
+
+export const { handlers: {GET, POST}, auth, signIn, signOut} = NextAuth({
+  adapter: PrismaAdapter(prisma),
+  providers: [
+    GitHub,
+     Nodemailer({
+      server: process.env.EMAIL_SERVER,
+      from: process.env.EMAIL_FROM,
+    }),
+  ],
 })
+
+
+
 
 
 

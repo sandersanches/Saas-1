@@ -9,14 +9,10 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = "file:./dev.db"
   // url      = env("DATABASE_URL")
 }
-
-
-
-
 
 model User {
   id            String          @id @default(cuid())
@@ -26,6 +22,8 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  todos         Todo[]
+
   // Optional for WebAuthn support
   Authenticator Authenticator[]
 
@@ -88,4 +86,15 @@ model Authenticator {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@id([userId, credentialID])
+}
+
+model Todo{
+  id                String  @id @default(cuid())
+  title             String
+
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId            String
+
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
 }
